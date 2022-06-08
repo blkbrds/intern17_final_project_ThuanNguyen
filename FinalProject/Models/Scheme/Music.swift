@@ -13,12 +13,12 @@ final class Music {
     var releaseDate: String
     var name: String
     var artworkUrl100: String
-    
+
     init(json: JSObject) {
-        self.id = json["id"] as! String
-        self.artistName = json["artistName"] as! String
-        self.releaseDate = json["releaseDate"] as! String
-        self.name = json["name"] as! String
-        self.artworkUrl100 = json["artworkUrl100"] as! String
+        self.id = json["id"] as? String ?? ""
+        self.artistName = json["artistName"] as? String ?? ""
+        self.releaseDate = json["releaseDate"] as? String ?? ""
+        self.name = json["name"] as? String ?? ""
+        self.artworkUrl100 = json["artworkUrl100"] as? String ?? ""
     }
 }

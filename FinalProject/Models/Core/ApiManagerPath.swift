@@ -10,9 +10,9 @@ import Foundation
 extension ApiManager {
     struct Path {
         static let baseURL: String = "https://fxstudio.dev"
-        
+
         // example
-        
+
         static let networkPath: String = baseURL + "/basic-ios-tutorial-connect-networking/"
     }
 }
