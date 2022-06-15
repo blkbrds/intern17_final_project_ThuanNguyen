@@ -6,7 +6,9 @@
 //
 
 import UIKit
+import SVProgressHUD
 
+let HUD = SVProgressHUD.self
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
