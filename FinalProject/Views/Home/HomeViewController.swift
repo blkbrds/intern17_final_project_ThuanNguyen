@@ -12,6 +12,10 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Home"
+        HUD.show()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            HUD.dismiss()
+        }
         // Do any additional setup after loading the view.
     }
 
