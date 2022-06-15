@@ -22,6 +22,13 @@
 		BF05D54A285899D1000B1AD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF05D549285899D1000B1AD3 /* Assets.xcassets */; };
 		BF27E0A228597006006F5608 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF27E0A028597006006F5608 /* HomeViewCell.swift */; };
 		BF27E0A328597006006F5608 /* HomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF27E0A128597006006F5608 /* HomeViewCell.xib */; };
+		BF27E0AE2859CD42006F5608 /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF27E0AC2859CD42006F5608 /* LiveViewController.swift */; };
+		BF27E0AF2859CD42006F5608 /* LiveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF27E0AD2859CD42006F5608 /* LiveViewController.xib */; };
+		BF27E0B22859CD5B006F5608 /* CatchupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF27E0B02859CD5B006F5608 /* CatchupViewController.swift */; };
+		BF27E0B32859CD5B006F5608 /* CatchupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF27E0B12859CD5B006F5608 /* CatchupViewController.xib */; };
+		BF27E0B62859CD7E006F5608 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF27E0B42859CD7E006F5608 /* FavouritesViewController.swift */; };
+		BF27E0B72859CD7E006F5608 /* FavouritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF27E0B52859CD7E006F5608 /* FavouritesViewController.xib */; };
+		BF27E0B92859D9DF006F5608 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF27E0B82859D9DF006F5608 /* BaseTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +51,13 @@
 		BF05D549285899D1000B1AD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF27E0A028597006006F5608 /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		BF27E0A128597006006F5608 /* HomeViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewCell.xib; sourceTree = "<group>"; };
+		BF27E0AC2859CD42006F5608 /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
+		BF27E0AD2859CD42006F5608 /* LiveViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveViewController.xib; sourceTree = "<group>"; };
+		BF27E0B02859CD5B006F5608 /* CatchupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatchupViewController.swift; sourceTree = "<group>"; };
+		BF27E0B12859CD5B006F5608 /* CatchupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatchupViewController.xib; sourceTree = "<group>"; };
+		BF27E0B42859CD7E006F5608 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
+		BF27E0B52859CD7E006F5608 /* FavouritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouritesViewController.xib; sourceTree = "<group>"; };
+		BF27E0B82859D9DF006F5608 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +123,7 @@
 		38DD5046285082D40048328E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BF27E0A428599AF7006F5608 /* Base */,
 				BF05D54B28596CD9000B1AD3 /* Controllers */,
 			);
 			path = Views;
@@ -197,6 +212,9 @@
 		BF05D54B28596CD9000B1AD3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BF27E0AB2859CD14006F5608 /* Favourites */,
+				BF27E0AA2859CD08006F5608 /* Catchup */,
+				BF27E0A92859CCEA006F5608 /* Live */,
 				38DD5047285082E40048328E /* Home */,
 			);
 			path = Controllers;
@@ -209,6 +227,41 @@
 				BF27E0A128597006006F5608 /* HomeViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		BF27E0A428599AF7006F5608 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				BF27E0B82859D9DF006F5608 /* BaseTabBarController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		BF27E0A92859CCEA006F5608 /* Live */ = {
+			isa = PBXGroup;
+			children = (
+				BF27E0AC2859CD42006F5608 /* LiveViewController.swift */,
+				BF27E0AD2859CD42006F5608 /* LiveViewController.xib */,
+			);
+			path = Live;
+			sourceTree = "<group>";
+		};
+		BF27E0AA2859CD08006F5608 /* Catchup */ = {
+			isa = PBXGroup;
+			children = (
+				BF27E0B02859CD5B006F5608 /* CatchupViewController.swift */,
+				BF27E0B12859CD5B006F5608 /* CatchupViewController.xib */,
+			);
+			path = Catchup;
+			sourceTree = "<group>";
+		};
+		BF27E0AB2859CD14006F5608 /* Favourites */ = {
+			isa = PBXGroup;
+			children = (
+				BF27E0B42859CD7E006F5608 /* FavouritesViewController.swift */,
+				BF27E0B52859CD7E006F5608 /* FavouritesViewController.xib */,
+			);
+			path = Favourites;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,9 +325,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF27E0B72859CD7E006F5608 /* FavouritesViewController.xib in Resources */,
 				38DD503E285081F40048328E /* LaunchScreen.storyboard in Resources */,
 				BF27E0A328597006006F5608 /* HomeViewCell.xib in Resources */,
 				BF05D54A285899D1000B1AD3 /* Assets.xcassets in Resources */,
+				BF27E0B32859CD5B006F5608 /* CatchupViewController.xib in Resources */,
+				BF27E0AF2859CD42006F5608 /* LiveViewController.xib in Resources */,
 				38DD504B285083170048328E /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,15 +402,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF27E0B92859D9DF006F5608 /* BaseTabBarController.swift in Sources */,
 				38DD5059285086FB0048328E /* ApiManagerPath.swift in Sources */,
 				38DD504E2850835F0048328E /* PhotoManager.swift in Sources */,
 				38DD5032285081F20048328E /* AppDelegate.swift in Sources */,
+				BF27E0B22859CD5B006F5608 /* CatchupViewController.swift in Sources */,
 				38DD5057285086A50048328E /* ApiManager.swift in Sources */,
 				38DD505B2850908F0048328E /* DataExt.swift in Sources */,
 				38DD5060285095A10048328E /* Music.swift in Sources */,
 				38DD5053285084A90048328E /* StringExt.swift in Sources */,
 				BF27E0A228597006006F5608 /* HomeViewCell.swift in Sources */,
 				38DD505D2850938A0048328E /* Reachability.swift in Sources */,
+				BF27E0AE2859CD42006F5608 /* LiveViewController.swift in Sources */,
+				BF27E0B62859CD7E006F5608 /* FavouritesViewController.swift in Sources */,
 				38DD504A285083170048328E /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
