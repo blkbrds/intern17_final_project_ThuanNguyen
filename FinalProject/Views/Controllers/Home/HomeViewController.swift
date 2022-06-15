@@ -16,15 +16,15 @@ class HomeViewController: UIViewController {
     }
     private func setupUI() {
         title = "My Music"
-        //background
+        /* background */
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "background.jpeg")
+        backgroundImage.image = UIImage(imageLiteralResourceName: "background.jpeg")
         backgroundImage.contentMode =  UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
-        //navigitionbar
-        let profileButton = UIBarButtonItem(image: UIImage(named: "profile"), style: .plain, target: self, action: #selector(profileAction))
+        /* navigitionbar */
+        let profileButton = UIBarButtonItem(image: UIImage(imageLiteralResourceName: "profile"), style: .plain, target: self, action: #selector(profileAction))
         navigationItem.leftBarButtonItem = profileButton
-        let notifyButton = UIBarButtonItem(image: UIImage(named: "ic-bell"), style: .plain, target: self, action: #selector(notifyAction))
+        let notifyButton = UIBarButtonItem(image: UIImage(imageLiteralResourceName: "ic-bell"), style: .plain, target: self, action: #selector(notifyAction))
         let searchBar = UIBarButtonItem(systemItem: .search)
         searchBar.action = #selector(searchAction)
         navigationItem.rightBarButtonItems = [searchBar,notifyButton]

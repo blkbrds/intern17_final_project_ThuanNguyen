@@ -24,8 +24,6 @@ class HomeViewCell: UITableViewCell {
         collectionView.dataSource = self
         collectionView.delegate = self
     }
-
-    
 }
 extension HomeViewCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -40,6 +38,4 @@ extension HomeViewCell: UICollectionViewDataSource, UICollectionViewDelegateFlow
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 75, height: 150)
     }
-
-
 }
