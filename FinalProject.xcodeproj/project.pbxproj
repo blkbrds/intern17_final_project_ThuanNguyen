@@ -22,6 +22,8 @@
 		BF05D54A285899D1000B1AD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF05D549285899D1000B1AD3 /* Assets.xcassets */; };
 		BF27E0A228597006006F5608 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF27E0A028597006006F5608 /* HomeViewCell.swift */; };
 		BF27E0A328597006006F5608 /* HomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF27E0A128597006006F5608 /* HomeViewCell.xib */; };
+		BFD96705285ACE4900AB3A76 /* HeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD96703285ACE4900AB3A76 /* HeaderViewCell.swift */; };
+		BFD96706285ACE4900AB3A76 /* HeaderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFD96704285ACE4900AB3A76 /* HeaderViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		BF05D549285899D1000B1AD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF27E0A028597006006F5608 /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		BF27E0A128597006006F5608 /* HomeViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewCell.xib; sourceTree = "<group>"; };
+		BFD96703285ACE4900AB3A76 /* HeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewCell.swift; sourceTree = "<group>"; };
+		BFD96704285ACE4900AB3A76 /* HeaderViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +211,8 @@
 			children = (
 				BF27E0A028597006006F5608 /* HomeViewCell.swift */,
 				BF27E0A128597006006F5608 /* HomeViewCell.xib */,
+				BFD96703285ACE4900AB3A76 /* HeaderViewCell.swift */,
+				BFD96704285ACE4900AB3A76 /* HeaderViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -223,6 +229,7 @@
 				38DD502A285081F20048328E /* Sources */,
 				38DD502B285081F20048328E /* Frameworks */,
 				38DD502C285081F20048328E /* Resources */,
+				79BBFA58BF100FA36FDADC97 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -273,6 +280,7 @@
 			files = (
 				38DD503E285081F40048328E /* LaunchScreen.storyboard in Resources */,
 				BF27E0A328597006006F5608 /* HomeViewCell.xib in Resources */,
+				BFD96706285ACE4900AB3A76 /* HeaderViewCell.xib in Resources */,
 				BF05D54A285899D1000B1AD3 /* Assets.xcassets in Resources */,
 				38DD504B285083170048328E /* HomeViewController.xib in Resources */,
 			);
@@ -298,6 +306,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		79BBFA58BF100FA36FDADC97 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FinalProject/Pods-FinalProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FinalProject/Pods-FinalProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FinalProject/Pods-FinalProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		8D427725C501FD47E810B20B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -330,6 +355,7 @@
 			files = (
 				38DD5059285086FB0048328E /* ApiManagerPath.swift in Sources */,
 				38DD504E2850835F0048328E /* PhotoManager.swift in Sources */,
+				BFD96705285ACE4900AB3A76 /* HeaderViewCell.swift in Sources */,
 				38DD5032285081F20048328E /* AppDelegate.swift in Sources */,
 				38DD5057285086A50048328E /* ApiManager.swift in Sources */,
 				38DD505B2850908F0048328E /* DataExt.swift in Sources */,
@@ -477,6 +503,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				EXCLUDED_ARCHS = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FinalProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -504,6 +531,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				EXCLUDED_ARCHS = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FinalProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
