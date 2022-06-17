@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
     }
+
     // MARK: - private functions
     private func setupView() {
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
@@ -43,6 +44,7 @@ class HomeViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
     }
+
     private func setupUI() {
         setupView()
         setupNavigation()

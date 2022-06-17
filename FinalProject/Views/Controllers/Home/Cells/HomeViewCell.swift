@@ -7,10 +7,10 @@
 
 import UIKit
 
-class HomeViewCell: UITableViewCell {
+final class HomeViewCell: UITableViewCell {
 
-    // MARK: - Oulets
-    @IBOutlet weak var collectionView: UICollectionView!
+    // MARK: Oulets
+    @IBOutlet private weak var collectionView: UICollectionView!
 
     // MARK: - AwakeFromNib
     override func awakeFromNib() {
