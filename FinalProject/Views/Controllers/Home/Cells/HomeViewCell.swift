@@ -7,10 +7,10 @@
 
 import UIKit
 
-class HomeViewCell: UITableViewCell {
+final class HomeViewCell: UITableViewCell {
 
-    // MARK: - Oulets
-    @IBOutlet weak var collectionView: UICollectionView!
+    // MARK: Oulets
+    @IBOutlet private weak var collectionView: UICollectionView!
 
     // MARK: - AwakeFromNib
     override func awakeFromNib() {
@@ -31,9 +31,8 @@ class HomeViewCell: UITableViewCell {
         collectionView.delegate = self
     }
 }
-//MARK: - UICollectionView
+// MARK: - UICollectionView
 extension HomeViewCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }

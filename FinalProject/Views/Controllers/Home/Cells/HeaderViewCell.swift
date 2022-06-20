@@ -22,16 +22,19 @@ class HeaderViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+
     // MARK: - private functions
     private func setupView() {
         collectionView.layer.cornerRadius = 20
     }
+
     private func configCollectionView() {
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         collectionView.delegate = self
         collectionView.dataSource = self
     }
 }
+
 // MARK: - UICollectionView
 extension HeaderViewCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
