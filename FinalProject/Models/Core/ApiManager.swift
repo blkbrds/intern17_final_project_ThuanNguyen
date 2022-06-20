@@ -46,6 +46,8 @@ final class ApiManager {
     }()
 
     func request(method: Method,
+                 headers: [String: String] = [:],
+                 parameters: [String: Any] = [:],
                  with path: String,
                  completion: @escaping APICompletion) {
         // Check Interneet is available
@@ -63,6 +65,22 @@ final class ApiManager {
         // Create request
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
+
+        // Add Header
+        if !headers.isEmpty {
+            headers.forEach { key, value in
+                request.setValue(value, forHTTPHeaderField: key)
+            }
+        }
+
+        // Add Parameter
+        if parameters.isEmpty {
+            do {
+                request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
+            } catch let error {
+                completion(.failure(.error(error.localizedDescription)))
+            }
+        }
 
         // config
         let config = URLSessionConfiguration.ephemeral
