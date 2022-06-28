@@ -7,12 +7,13 @@
 
 import UIKit
 
-class BaseTabBarController: UITabBarController {
+final class BaseTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewController()
     }
+
     // MARK: - Setup View Controller
     private func setupViewController() {
         let homeViewController = HomeViewController()
@@ -22,10 +23,12 @@ class BaseTabBarController: UITabBarController {
         let liveViewController = LiveViewController()
         let liveNavi = UINavigationController(rootViewController: liveViewController)
         liveNavi.tabBarItem = UITabBarItem(title: "Live", image: #imageLiteral(resourceName: "ic-live-tabbar").withRenderingMode(.alwaysOriginal), selectedImage: #imageLiteral(resourceName: "ic-live-selected").withRenderingMode(.alwaysOriginal))
+
         /* Favorites */
         let catchupViewController = CatchupViewController()
         let catchupNavi = UINavigationController(rootViewController: catchupViewController)
         catchupNavi.tabBarItem = UITabBarItem(title: "CatchupTV", image: #imageLiteral(resourceName: "ic-catchup-tabbar").withRenderingMode(.alwaysOriginal), selectedImage: #imageLiteral(resourceName: "ic-catchup-selected").withRenderingMode(.alwaysOriginal))
+        
         /* Profile */
         let favouritesViewController = FavouritesViewController()
         let favouritesNavi = UINavigationController(rootViewController: favouritesViewController)
