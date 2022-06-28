@@ -7,33 +7,38 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+final class ProfileViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet private weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
+
     // MARK: - private funtions
     private func setupNavigation() {
         title = "Tài khoản cá nhân"
         let settingButton = UIBarButtonItem(image: UIImage(imageLiteralResourceName: "ic-settings"), style: .plain, target: self, action: #selector(settingsAction))
         navigationItem.rightBarButtonItem = settingButton
     }
+
     private func configTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
+
     private func setupUI() {
         setupNavigation()
         configTableView()
     }
+
     // MARK: - Actions
     @objc private func settingsAction() {
 
     }
 }
+
 // MARK: - UITableView
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
