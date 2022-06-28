@@ -9,8 +9,17 @@ import UIKit
 
 final class HomeViewCell: UITableViewCell {
 
-    // MARK: Oulets
+    var viewModel: HomeCellViewModel? {
+        didSet {
+            updateHeaderView()
+            updateData()
+        }
+    }
+
+    // MARK: Outlets
     @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var seeButton: UIButton!
 
     // MARK: - AwakeFromNib
     override func awakeFromNib() {
@@ -26,20 +35,35 @@ final class HomeViewCell: UITableViewCell {
     private func configCollectionView() {
         let headerNib = UINib(nibName: "HeaderCollectionView", bundle: Bundle.main)
         collectionView.register(headerNib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HeaderCollectionView")
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        let nib = UINib(nibName: "CustomHomeViewCell", bundle: .main)
+        collectionView.register(nib, forCellWithReuseIdentifier: "CustomHomeViewCell")
         collectionView.dataSource = self
         collectionView.delegate = self
+    }
+
+    func updateHeaderView() {
+       // guard let viewModel = viewModel, let item = viewModel.item else { return }
+        guard let viewModel = viewModel else { return }
+        nameLabel.text = viewModel.nameHeader
+    }
+
+    func updateData() {
+        guard let viewModel = viewModel else { return }
+        viewModel.items
+        self.collectionView.reloadData()
     }
 }
 // MARK: - UICollectionView
 extension HomeViewCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        guard let viewModel = viewModel else { return 0 }
+        return viewModel.items.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
-        cell.backgroundColor = .systemGray4
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomHomeViewCell", for: indexPath) as? CustomHomeViewCell else { return UICollectionViewCell() }
+        cell.contentModel = viewModel?.contentViewForViewCell(at: indexPath)
         return cell
     }
 
