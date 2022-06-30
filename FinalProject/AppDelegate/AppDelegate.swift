@@ -16,9 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        // Provide your apps root view controller
-        let naviVC = UINavigationController(rootViewController: HomeViewController())
-        window?.rootViewController = naviVC
+        let navi = UINavigationController(rootViewController: BaseTabBarController())
+        window?.rootViewController = navi
+        window?.backgroundColor = .white
         window?.makeKeyAndVisible()
 
         return true
