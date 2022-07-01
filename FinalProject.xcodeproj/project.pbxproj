@@ -27,6 +27,9 @@
 		BF892A79286D42F2004702CE /* LiveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF892A6F286D42F2004702CE /* LiveViewController.xib */; };
 		BF892A7A286D42F2004702CE /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF892A72286D42F2004702CE /* ProfileViewController.xib */; };
 		BF892A7B286D42F2004702CE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF892A73286D42F2004702CE /* ProfileViewController.swift */; };
+		BF892A7F286D5469004702CE /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF892A7D286D5469004702CE /* PlayViewController.swift */; };
+		BF892A80286D5469004702CE /* PlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF892A7E286D5469004702CE /* PlayViewController.xib */; };
+		BF892A82286D6060004702CE /* PlayViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF892A81286D6060004702CE /* PlayViewControllerModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		BF892A6F286D42F2004702CE /* LiveViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LiveViewController.xib; sourceTree = "<group>"; };
 		BF892A72286D42F2004702CE /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		BF892A73286D42F2004702CE /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BF892A7D286D5469004702CE /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
+		BF892A7E286D5469004702CE /* PlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayViewController.xib; sourceTree = "<group>"; };
+		BF892A81286D6060004702CE /* PlayViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewControllerModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +242,7 @@
 		BF892A70286D42F2004702CE /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				BF892A7C286D53D1004702CE /* PlayMusic */,
 				BF892A71286D42F2004702CE /* Profile */,
 			);
 			path = Detail;
@@ -248,6 +255,16 @@
 				BF892A73286D42F2004702CE /* ProfileViewController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		BF892A7C286D53D1004702CE /* PlayMusic */ = {
+			isa = PBXGroup;
+			children = (
+				BF892A7D286D5469004702CE /* PlayViewController.swift */,
+				BF892A7E286D5469004702CE /* PlayViewController.xib */,
+				BF892A81286D6060004702CE /* PlayViewControllerModel.swift */,
+			);
+			path = PlayMusic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +331,7 @@
 				BF892A7A286D42F2004702CE /* ProfileViewController.xib in Resources */,
 				38DD503E285081F40048328E /* LaunchScreen.storyboard in Resources */,
 				BF892A76286D42F2004702CE /* CatchupViewController.xib in Resources */,
+				BF892A80286D5469004702CE /* PlayViewController.xib in Resources */,
 				BF05D54A285899D1000B1AD3 /* Assets.xcassets in Resources */,
 				BF892A79286D42F2004702CE /* LiveViewController.xib in Resources */,
 				BF892A74286D42F2004702CE /* FavouritesViewController.xib in Resources */,
@@ -390,6 +408,7 @@
 				BF892A77286D42F2004702CE /* CatchupViewController.swift in Sources */,
 				BF27E0B92859D9DF006F5608 /* BaseTabBarController.swift in Sources */,
 				38DD5059285086FB0048328E /* ApiManagerPath.swift in Sources */,
+				BF892A82286D6060004702CE /* PlayViewControllerModel.swift in Sources */,
 				38DD504E2850835F0048328E /* PhotoManager.swift in Sources */,
 				38DD5032285081F20048328E /* AppDelegate.swift in Sources */,
 				38DD5057285086A50048328E /* ApiManager.swift in Sources */,
@@ -399,6 +418,7 @@
 				BF892A75286D42F2004702CE /* FavouritesViewController.swift in Sources */,
 				BF892A7B286D42F2004702CE /* ProfileViewController.swift in Sources */,
 				BF892A78286D42F2004702CE /* LiveViewController.swift in Sources */,
+				BF892A7F286D5469004702CE /* PlayViewController.swift in Sources */,
 				38DD505D2850938A0048328E /* Reachability.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
