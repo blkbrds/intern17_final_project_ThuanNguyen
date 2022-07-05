@@ -57,61 +57,47 @@ final class HomeViewModel {
         }
     }
 
-    private func memberChillOfItemInSection() {
-        for i in 0...19 {
-            let chillItem = items[i]
-            chillList.append(chillItem)
-        }
-    }
-    private func memberSingOfItemInSection() {
-        for i in 20...39 {
-            let singItem = items[i]
-            singList.append(singItem)
-        }
-    }
+    private func handleArr() {
+        for i in 0 ... 99 {
+            switch i {
+            case 0...19:
+                chillList.append(items[i])
+            case 20...39:
+                singList.append(items[i])
+            case 40...59:
+                moodList.append(items[i])
+            case 60...79:
+                instrucList.append(items[i])
+            case 80...99:
+                throwList.append(items[i])
+            default:
+                return
+            }
 
-    private func memberMoodOfItemInSection() {
-        for i in 40...59 {
-            let moodItem = items[i]
-            moodList.append(moodItem)
-        }
-    }
-
-    private func memberInstrumentalOfItemInSection() {
-        for i in 60...79 {
-            let instrucItem = items[i]
-            instrucList.append(instrucItem)
-        }
-    }
-
-    private func memberThrowbackOfItemInSection() {
-        for i in 80...99 {
-            let throwItem = items[i]
-            throwList.append(throwItem)
         }
     }
 
     func contentModelForViewItem(at indexPath: IndexPath) -> HomeCellViewModel? {
-        guard let type = SectionType(rawValue: indexPath.row) else { return nil}
+        guard let type = SectionType(rawValue: indexPath.row) else { return nil }
         switch type {
         case .chill:
-            return HomeCellViewModel(items: chillList, nameHeader: SectionType(rawValue: indexPath.row)?.nameSection)
+            return HomeCellViewModel(items: chillList, nameHeader: type.nameSection)
         case .sing:
-            return HomeCellViewModel(items: singList, nameHeader: SectionType(rawValue: indexPath.row)?.nameSection)
+            return HomeCellViewModel(items: singList, nameHeader: type.nameSection)
         case .mood:
-            return HomeCellViewModel(items: moodList, nameHeader: SectionType(rawValue: indexPath.row)?.nameSection)
+            return HomeCellViewModel(items: moodList, nameHeader: type.nameSection)
         case .instrumental:
-            return HomeCellViewModel(items: instrucList, nameHeader: SectionType(rawValue: indexPath.row)?.nameSection)
+            return HomeCellViewModel(items: instrucList, nameHeader: type.nameSection)
         case .throwback:
-            return HomeCellViewModel(items: throwList, nameHeader: SectionType(rawValue: indexPath.row)?.nameSection)
+            return HomeCellViewModel(items: throwList, nameHeader: type.nameSection)
         }
     }
 
-    // MARK: Funtions LoadAPI
-    func loadAPI(completion: @escaping APICompletion) {
+    // MARK: Funtions get request API
+    func requestAPI(completion: @escaping APICompletion) {
         let headers = [
-            "X-RapidAPI-Key": "5736dfa7d1msh2f886e8f3131557p19ffffjsn30b2d03ed2ec",
-            "X-RapidAPI-Host": "spotify23.p.rapidapi.com"
+            "X-RapidAPI-Key": ApiManager.Key.rapidAPIKey,
+            "X-RapidAPI-Host": ApiManager.Key.RapidAPIHost
         ]
         ApiManager.shared.request(method: .get, headers: headers, with: ApiManager.Path.networkPath) { [weak self] result in
             guard let this = self else { return }
@@ -124,11 +110,7 @@ final class HomeViewModel {
                     }
                     this.getHeaderImageList()
                     this.makeList(6)
-                    this.memberChillOfItemInSection()
-                    this.memberMoodOfItemInSection()
-                    this.memberSingOfItemInSection()
-                    this.memberInstrumentalOfItemInSection()
-                    this.memberThrowbackOfItemInSection()
+                    this.handleArr()
                     completion(.success(data))
 
                 } else {

@@ -42,7 +42,6 @@ final class HomeViewCell: UITableViewCell {
     }
 
     func updateHeaderView() {
-       // guard let viewModel = viewModel, let item = viewModel.item else { return }
         guard let viewModel = viewModel else { return }
         nameLabel.text = viewModel.nameHeader
     }

@@ -8,7 +8,11 @@
 import UIKit
 class HomeViewController: UIViewController {
 
-    var viewmodel = HomeViewModel()
+    // MARK: - properties
+    var viewModel = HomeViewModel()
+    var timer = Timer()
+    var counter = 0
+    let numberOfImageHeader: Int = 6
 
     // MARK: Outlets
     @IBOutlet private weak var tableView: UITableView!
@@ -31,10 +35,10 @@ class HomeViewController: UIViewController {
         }
 
     private func setupPageControl() {
-        pageView.numberOfPages = 6
+        pageView.numberOfPages = numberOfImageHeader
         pageView.currentPage = 0
         DispatchQueue.main.async {
-            Config.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
+            self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
         }
     }
 
@@ -67,25 +71,24 @@ class HomeViewController: UIViewController {
         setupNavigation()
         configTableView()
         configCollectionView()
-        loadAPIA()
+        loadAPI()
     }
+
     // MARK: funtion loadAPI
-    func loadAPIA() {
-        print("LOAD API")
-        viewmodel.loadAPI { [weak self] result in
+    private func loadAPI() {
+        viewModel.requestAPI { [weak self] result in
             guard let this = self else { return }
             switch result {
             case .success:
                 this.setupPageControl()
                 this.tableView.reloadData()
                 this.collectionView.reloadData()
-                //print(this.viewmodel.items[0].track?.album?.images?.count)
             case .failure(let error):
-                let alert = UIAlertController(title: "", message: error.localizedDescription, preferredStyle: .alert)
-                this.present(alert, animated: true)
+                this.alert(title: "", message: error.localizedDescription)
             }
         }
     }
+
     // MARK: - Actions for Navigation
     @objc private func profileAction() {
 
@@ -100,17 +103,17 @@ class HomeViewController: UIViewController {
     }
 
     @objc private func changeImage() {
-        if Config.counter < 6 {
-            let index = IndexPath.init(item: Config.counter, section: 0)
+        if counter < numberOfImageHeader {
+            let index = IndexPath(item: counter, section: 0)
             self.collectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
-            pageView.currentPage = Config.counter
-            Config.counter += 1
+            pageView.currentPage = counter
+            counter += 1
         } else {
-            Config.counter = 0
-            let index = IndexPath.init(item: Config.counter, section: 0)
+            counter = 0
+            let index = IndexPath(item: counter, section: 0)
             self.collectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: false)
-            pageView.currentPage = Config.counter
-            Config.counter = 1
+            pageView.currentPage = counter
+            counter = 1
         }
     }
 }
@@ -127,7 +130,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "HomeViewCell") as? HomeViewCell else { return UITableViewCell() }
-        cell.viewModel = viewmodel.contentModelForViewItem(at: indexPath)
+        cell.viewModel = viewModel.contentModelForViewItem(at: indexPath)
         return cell
     }
 
@@ -135,11 +138,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return 200
     }
 }
+
 // MARK: UICollectionView
 extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if viewmodel.imageList.count == 0 {
+        if viewModel.imageList.count == 0 {
             return 0
         } else {
             return Config.pickItems
@@ -148,7 +152,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomHeaderView", for: indexPath) as? CustomHeaderView else { return UICollectionViewCell() }
-        cell.headerModel = viewmodel.viewModelForHeaderViewItem(at: indexPath)
+        cell.headerModel = viewModel.viewModelForHeaderViewItem(at: indexPath)
         return cell
     }
 
@@ -164,7 +168,6 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
 extension HomeViewController {
     struct Config {
         static let pickItems: Int = 6
-        static var timer = Timer()
-        static var counter = 0
     }
 }
+

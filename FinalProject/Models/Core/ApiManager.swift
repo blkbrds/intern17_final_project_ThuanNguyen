@@ -68,7 +68,7 @@ final class ApiManager {
 
         // Add Header
         if !headers.isEmpty {
-            self.defaultHTTPHeaders.merge(headers) { $1 }
+            defaultHTTPHeaders.merge(headers) { $1 }
         }
 
         request.allHTTPHeaderFields = defaultHTTPHeaders

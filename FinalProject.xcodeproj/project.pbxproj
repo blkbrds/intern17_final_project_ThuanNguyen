@@ -18,6 +18,7 @@
 		38DD5060285095A10048328E /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DD505F285095A10048328E /* Music.swift */; };
 		70BA79F95FE6DE4EEB110FA6 /* Pods_FinalProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74DC0E61B8CD198215DDFAF7 /* Pods_FinalProject.framework */; };
 		BF05D54A285899D1000B1AD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF05D549285899D1000B1AD3 /* Assets.xcassets */; };
+		BF9D53BE2872AAA100256474 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9D53BD2872AAA100256474 /* UIViewControllerExt.swift */; };
 		BFFC767928603214002EC5DD /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFC766F28603214002EC5DD /* HomeViewCell.swift */; };
 		BFFC767B28603214002EC5DD /* HomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFFC767128603214002EC5DD /* HomeViewCell.xib */; };
 		BFFC767D28603214002EC5DD /* HomeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFC767328603214002EC5DD /* HomeCellViewModel.swift */; };
@@ -48,6 +49,7 @@
 		45040D2A773B6DE93B7CAD29 /* Pods-FinalProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProject.debug.xcconfig"; path = "Target Support Files/Pods-FinalProject/Pods-FinalProject.debug.xcconfig"; sourceTree = "<group>"; };
 		74DC0E61B8CD198215DDFAF7 /* Pods_FinalProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinalProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF05D549285899D1000B1AD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BF9D53BD2872AAA100256474 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		BFFC766F28603214002EC5DD /* HomeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		BFFC767128603214002EC5DD /* HomeViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewCell.xib; sourceTree = "<group>"; };
 		BFFC767328603214002EC5DD /* HomeCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCellViewModel.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				38DD5052285084A90048328E /* StringExt.swift */,
 				38DD505A2850908F0048328E /* DataExt.swift */,
 				BFFC7687286163E6002EC5DD /* UIImageViewExt.swift */,
+				BF9D53BD2872AAA100256474 /* UIViewControllerExt.swift */,
 			);
 			path = Ext;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 			files = (
 				BFFC76942861A323002EC5DD /* CustomHomeViewCellModel.swift in Sources */,
 				BFFC768528615697002EC5DD /* CustomHeaderView.swift in Sources */,
+				BF9D53BE2872AAA100256474 /* UIViewControllerExt.swift in Sources */,
 				38DD5059285086FB0048328E /* ApiManagerPath.swift in Sources */,
 				BFFC768D28616814002EC5DD /* CustomHomeViewCell.swift in Sources */,
 				38DD504E2850835F0048328E /* PhotoManager.swift in Sources */,
