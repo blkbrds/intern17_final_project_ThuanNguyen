@@ -10,6 +10,8 @@ import UIKit
 final class ProfileViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet private weak var tableView: UITableView!
+
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
