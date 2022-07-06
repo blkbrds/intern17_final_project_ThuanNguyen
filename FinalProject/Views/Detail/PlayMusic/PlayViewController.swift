@@ -29,15 +29,15 @@ final class PlayViewController: UIViewController {
     }
 
     // MARK: Actions
-    @objc func rightAction() {
+    @objc private func rightAction() {
 
     }
 
-    @objc func downloadAction() {
+    @objc private func downloadAction() {
 
     }
 
-    @objc func closeAction() {
+    @objc private func closeAction() {
 
     }
 }
