@@ -16,7 +16,7 @@ final class BaseTabBarController: UITabBarController {
 
     // MARK: - Setup View Controller
     private func setupViewController() {
-        let homeViewController = HomeViewController()
+        let homeViewController = LiveViewController()
         let homeNavi = UINavigationController(rootViewController: homeViewController)
         homeNavi.tabBarItem = UITabBarItem(title: "Home", image: #imageLiteral(resourceName: "ic-home-tabbar").withRenderingMode(.alwaysOriginal), selectedImage: #imageLiteral(resourceName: "ic-home-selected").withRenderingMode(.alwaysOriginal))
 
