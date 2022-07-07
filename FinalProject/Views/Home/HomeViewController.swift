@@ -32,7 +32,7 @@ final class HomeViewController: UIViewController {
         backgroundImage.image = UIImage(imageLiteralResourceName: "background.jpeg")
         backgroundImage.contentMode = .scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
-        }
+    }
 
     private func setupPageControl() {
         pageView.numberOfPages = numberOfImageHeader
@@ -53,7 +53,9 @@ final class HomeViewController: UIViewController {
     }
 
     private func configTableView() {
+        let nib1 = UINib(nibName: "HeaderViewCell", bundle: Bundle.main)
         let nib = UINib(nibName: "HomeViewCell", bundle: Bundle.main)
+        tableView.register(nib1, forCellReuseIdentifier: "HeaderViewCell")
         tableView.register(nib, forCellReuseIdentifier: "HomeViewCell")
         tableView.dataSource = self
         tableView.delegate = self
@@ -117,6 +119,7 @@ final class HomeViewController: UIViewController {
         }
     }
 }
+
 // MARK: - UITableView Data Source
 extension HomeViewController: UITableViewDataSource {
 
@@ -146,7 +149,7 @@ extension HomeViewController: UITableViewDelegate {
 
 // MARK: UICollectionView
 extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if viewModel.imageList.count == 0 {
             return 0
@@ -175,5 +178,3 @@ extension HomeViewController {
         static let pickItems: Int = 6
     }
 }
-
-
