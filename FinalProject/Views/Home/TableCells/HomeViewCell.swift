@@ -56,8 +56,7 @@ final class HomeViewCell: UITableViewCell {
 extension HomeViewCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let viewModel = viewModel else { return 0 }
-        return viewModel.items.count
+        return viewModel?.items?.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -70,3 +69,4 @@ extension HomeViewCell: UICollectionViewDataSource, UICollectionViewDelegateFlow
         return CGSize(width: 100, height: 150)
     }
 }
+

@@ -10,8 +10,8 @@ import Foundation
 extension ApiManager {
 
     struct Key {
-        static let rapidAPIKey: String = "5736dfa7d1msh2f886e8f3131557p19ffffjsn30b2d03ed2ec"
-        static let RapidAPIHost: String = "spotify23.p.rapidapi.com"
+        static let rapidAPIKey: String = "c61ea92b81mshb1a02b6d13bcbbbp1d81dfjsn6ae0a0a2dc40"
+        static let rapidAPIHost: String = "spotify23.p.rapidapi.com"
     }
 
     struct Path {

@@ -6,13 +6,13 @@
 //
 
 import UIKit
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
 
     // MARK: - properties
-    var viewModel = HomeViewModel()
-    var timer = Timer()
-    var counter = 0
-    let numberOfImageHeader: Int = 6
+    private var viewModel = HomeViewModel()
+    private var timer = Timer()
+    private var counter = 0
+    private let numberOfImageHeader: Int = 6
 
     // MARK: Outlets
     @IBOutlet private weak var tableView: UITableView!
@@ -71,12 +71,12 @@ class HomeViewController: UIViewController {
         setupNavigation()
         configTableView()
         configCollectionView()
-        loadAPI()
+        loadAPIPlayListTrack()
     }
 
-    // MARK: funtion loadAPI
-    private func loadAPI() {
-        viewModel.requestAPI { [weak self] result in
+    // MARK: funtion loadAPI in PlayList Track
+    private func loadAPIPlayListTrack() {
+        viewModel.requestAPIInPlayListTrack { [weak self] result in
             guard let this = self else { return }
             switch result {
             case .success:
@@ -117,8 +117,8 @@ class HomeViewController: UIViewController {
         }
     }
 }
-// MARK: - UITableView
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+// MARK: - UITableView Data Source
+extension HomeViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -137,6 +137,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }
+}
+
+// MARK: - UITableView Delegate
+extension HomeViewController: UITableViewDelegate {
+
 }
 
 // MARK: UICollectionView
@@ -170,4 +175,5 @@ extension HomeViewController {
         static let pickItems: Int = 6
     }
 }
+
 

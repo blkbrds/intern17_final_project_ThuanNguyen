@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomHomeViewCell: UICollectionViewCell {
+final class CustomHomeViewCell: UICollectionViewCell {
 
     var contentModel: CustomHomeViewCellModell? {
         didSet {
@@ -16,9 +16,9 @@ class CustomHomeViewCell: UICollectionViewCell {
     }
 
     // MARK: Outlet
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var nameSongLabel: UILabel!
-    @IBOutlet weak var nameSingLabel: UILabel!
+    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var nameSongLabel: UILabel!
+    @IBOutlet private weak var nameSingLabel: UILabel!
 
     // MARK: - AwakeFromNib
     override func awakeFromNib() {
@@ -33,6 +33,6 @@ class CustomHomeViewCell: UICollectionViewCell {
         nameSingLabel.text = contentModel.nameSing
         imageView.layer.cornerRadius = 15
         imageView.clipsToBounds = true
-        imageView.downloaded(from: contentModel.image ?? "", contentMode: .scaleToFill)
+        imageView.downloadImageInPlaylistTrack(from: contentModel.image ?? "", contentMode: .scaleToFill)
     }
 }

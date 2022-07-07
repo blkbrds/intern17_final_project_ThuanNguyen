@@ -58,22 +58,21 @@ final class HomeViewModel {
     }
 
     private func handleArr() {
-        for i in 0 ... 99 {
-            switch i {
-            case 0...19:
-                chillList.append(items[i])
-            case 20...39:
-                singList.append(items[i])
-            case 40...59:
-                moodList.append(items[i])
-            case 60...79:
-                instrucList.append(items[i])
-            case 80...99:
-                throwList.append(items[i])
-            default:
-                return
-            }
 
+        for (index, value) in items.enumerated() {
+            switch index {
+            case 0...19:
+                chillList.append(value)
+            case 20...39 :
+                singList.append(value)
+            case 40...59 :
+                moodList.append(value)
+            case 60...79 :
+                instrucList.append(value)
+            case 80...99 :
+                throwList.append(value)
+            default: break
+            }
         }
     }
 
@@ -93,11 +92,11 @@ final class HomeViewModel {
         }
     }
 
-    // MARK: Funtions get request API
-    func requestAPI(completion: @escaping APICompletion) {
+    // MARK: Funtions get request API in PlayList Track
+    func requestAPIInPlayListTrack(completion: @escaping APICompletion) {
         let headers = [
             "X-RapidAPI-Key": ApiManager.Key.rapidAPIKey,
-            "X-RapidAPI-Host": ApiManager.Key.RapidAPIHost
+            "X-RapidAPI-Host": ApiManager.Key.rapidAPIHost
         ]
         ApiManager.shared.request(method: .get, headers: headers, with: ApiManager.Path.networkPath) { [weak self] result in
             guard let this = self else { return }
