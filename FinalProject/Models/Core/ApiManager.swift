@@ -6,9 +6,9 @@
 //
 
 import Foundation
+import RealmSwift
 
 typealias APICompletion = (APIResult) -> Void
-
 enum APIResult {
     case success(JSObject?)
     case failure(APIError)
@@ -68,13 +68,13 @@ final class ApiManager {
 
         // Add Header
         if !headers.isEmpty {
-            headers.forEach { key, value in
-                request.setValue(value, forHTTPHeaderField: key)
-            }
+            defaultHTTPHeaders.merge(headers) { $1 }
         }
 
+        request.allHTTPHeaderFields = defaultHTTPHeaders
+
         // Add Parameter
-        if parameters.isEmpty {
+        if !parameters.isEmpty {
             do {
                 request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
             } catch let error {
@@ -98,7 +98,6 @@ final class ApiManager {
                 }
             }
         }
-
         task.resume()
     }
 }

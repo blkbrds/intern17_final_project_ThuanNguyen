@@ -6,3 +6,13 @@
 //
 
 import Foundation
+import UIKit
+class PlayViewControllerModel {
+
+    // MARK: - properties
+    var item: Item?
+
+    init(item: Item? = Item()) {
+        self.item = item
+    }
+}
