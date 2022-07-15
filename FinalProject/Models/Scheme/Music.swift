@@ -46,4 +46,5 @@ class Item {
         self.track = Track(json: aJson)
         self.isLocal = json["is_local"] as? Bool
     }
+    init(){ }
 }

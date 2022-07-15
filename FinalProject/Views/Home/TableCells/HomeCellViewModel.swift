@@ -18,7 +18,7 @@ final class HomeCellViewModel {
 
     func contentViewForViewCell(at indexPath: IndexPath) -> CustomHomeViewCellModell? {
         guard let item = items?[indexPath.row] else { return nil }
-        return CustomHomeViewCellModell(image: item.track?.album?.images, nameSong: item.track?.album?.name, nameSing: item.track?.name)
+        return CustomHomeViewCellModell(image: item.track?.album?.images, nameSong: item.track?.album?.name, nameSing: item.track?.name, previewUrl: item.track?.previewUrl)
     }
 
     func numberOfItemInSection(in section: Int) -> Int {

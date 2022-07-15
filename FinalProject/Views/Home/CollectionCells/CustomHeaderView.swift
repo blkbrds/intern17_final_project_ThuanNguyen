@@ -26,7 +26,7 @@ class CustomHeaderView: UICollectionViewCell {
     // MARK: - private functions
     private func updateView() {
         guard let viewModel = headerModel, let imageUrl = viewModel.image else { return }
-        imageView.downloadImageInPlaylistTrack(from: imageUrl, contentMode: .scaleToFill)
+        imageView.loadImageInPlaylistTrack(from: imageUrl, contentMode: .scaleToFill)
         imageView.clipsToBounds = true
     }
 

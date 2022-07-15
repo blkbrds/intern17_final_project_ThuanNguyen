@@ -33,6 +33,6 @@ final class CustomHomeViewCell: UICollectionViewCell {
         nameSingLabel.text = contentModel.nameSing
         imageView.layer.cornerRadius = 15
         imageView.clipsToBounds = true
-        imageView.downloadImageInPlaylistTrack(from: contentModel.image ?? "", contentMode: .scaleToFill)
+        imageView.loadImageInPlaylistTrack(from: contentModel.image ?? "", contentMode: .scaleToFill)
     }
 }

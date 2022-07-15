@@ -318,10 +318,10 @@
 			isa = PBXGroup;
 			children = (
 				BF9D53CC2876F47E00256474 /* CollectionCells */,
+				BF9D53D42876F47F00256474 /* TableCells */,
 				BF9D53D92876F47F00256474 /* HomeViewController.swift */,
 				BF9D53D82876F47F00256474 /* HomeViewController.xib */,
 				BF9D53D32876F47E00256474 /* HomeViewModel.swift */,
-				BF9D53D42876F47F00256474 /* TableCells */,
 			);
 			path = Home;
 			sourceTree = "<group>";

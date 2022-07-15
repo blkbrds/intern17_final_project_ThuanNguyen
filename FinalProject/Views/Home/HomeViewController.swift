@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 final class HomeViewController: UIViewController {
 
     // MARK: - properties
@@ -43,6 +44,7 @@ final class HomeViewController: UIViewController {
     }
 
     private func setupNavigation() {
+        navigationController?.isToolbarHidden = true
         title = "My Music"
         let profileButton = UIBarButtonItem(image: UIImage(imageLiteralResourceName: "profile"), style: .plain, target: self, action: #selector(profileAction))
         navigationItem.leftBarButtonItem = profileButton
@@ -86,14 +88,15 @@ final class HomeViewController: UIViewController {
                 this.tableView.reloadData()
                 this.collectionView.reloadData()
             case .failure(let error):
-                this.alert(title: "", message: error.localizedDescription)
+                this.alert(title: "error", message: error.localizedDescription)
             }
         }
     }
 
     // MARK: - Actions for Navigation
     @objc private func profileAction() {
-
+        let vc = ProfileViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 
     @objc private func notifyAction() {
@@ -131,12 +134,6 @@ extension HomeViewController: UITableViewDataSource {
         return SectionType.allCases.count
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "HomeViewCell") as? HomeViewCell else { return UITableViewCell() }
-        cell.viewModel = viewModel.contentModelForViewItem(at: indexPath)
-        return cell
-    }
-
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }
@@ -144,7 +141,12 @@ extension HomeViewController: UITableViewDataSource {
 
 // MARK: - UITableView Delegate
 extension HomeViewController: UITableViewDelegate {
-
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "HomeViewCell") as? HomeViewCell else { return UITableViewCell() }
+        cell.viewModel = viewModel.contentModelForViewItem(at: indexPath)
+        cell.delegate = self
+        return cell
+    }
 }
 
 // MARK: UICollectionView
@@ -164,6 +166,11 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
         return cell
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = PlayViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: UIScreen.main.bounds.width, height: 250)
     }
@@ -177,4 +184,17 @@ extension HomeViewController {
     struct Config {
         static let pickItems: Int = 6
     }
+}
+
+extension HomeViewController: homeCellDelegate {
+
+    func cell(cell: HomeViewCell, needsPerform action: HomeViewCell.Action) {
+        switch action {
+        case.detail(let data):
+            let playViewController = PlayViewController()
+            playViewController.playModel = PlayViewControllerModel(item: data)
+            navigationController?.pushViewController(playViewController, animated: true)
+        }
+    }
+
 }

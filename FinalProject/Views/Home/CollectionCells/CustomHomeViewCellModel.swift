@@ -7,14 +7,16 @@
 
 import Foundation
 class  CustomHomeViewCellModell {
-    
+
     var image: String?
     var nameSong: String?
     var nameSing: String?
+    var previewUrl: String?
 
-    init(image: String?, nameSong: String?, nameSing: String?) {
+    init(image: String?, nameSong: String?, nameSing: String?, previewUrl: String?) {
         self.image = image
         self.nameSong = nameSong
         self.nameSing = nameSing
+        self.previewUrl = previewUrl
     }
 }

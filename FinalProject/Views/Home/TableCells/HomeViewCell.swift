@@ -6,6 +6,10 @@
 //
 
 import UIKit
+protocol homeCellDelegate: AnyObject {
+    func cell(cell: HomeViewCell, needsPerform action: HomeViewCell.Action)
+
+}
 
 final class HomeViewCell: UITableViewCell {
 
@@ -14,6 +18,12 @@ final class HomeViewCell: UITableViewCell {
             updateHeaderView()
             updateData()
         }
+    }
+
+    // MARK: - Protocol
+    var delegate: homeCellDelegate?
+    enum Action {
+        case detail(data: Item?)
     }
 
     // MARK: Outlets
@@ -54,7 +64,7 @@ final class HomeViewCell: UITableViewCell {
 }
 // MARK: - UICollectionView
 extension HomeViewCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel?.items?.count ?? 0
     }
@@ -65,8 +75,14 @@ extension HomeViewCell: UICollectionViewDataSource, UICollectionViewDelegateFlow
         return cell
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let viewModel = viewModel {
+            delegate?.cell(cell: self, needsPerform: .detail(data: viewModel.items?[indexPath.row]))
+        }
+        print("=========\(indexPath.row)")
+    }
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 100, height: 150)
     }
 }
-

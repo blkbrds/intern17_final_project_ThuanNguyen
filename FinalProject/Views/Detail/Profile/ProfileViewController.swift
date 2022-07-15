@@ -51,7 +51,7 @@ final class ProfileViewController: UIViewController {
     }
 
     @objc private func backAction() {
-
+        navigationController?.popViewController(animated: true)
     }
 }
 
