@@ -23,15 +23,20 @@ class Album {
 class Track {
 
     var album: Album?
+    var artists: String?
     var name: String?
+    var id: String?
     var previewUrl: String?
     var duration: Int?
 
     init(json: JSObject) {
         guard let bJson = json["album"] as? JSObject else { return }
         self.album = Album(json: bJson)
+        guard let aJson = json["artists"] as? [JSObject] else { return }
+        self.artists = aJson.first?["name"] as? String
         self.duration = json["duration_ms"] as? Int
         self.name = json["name"] as? String
+        self.id = json["id"] as? String
         self.previewUrl = json["preview_url"] as? String
     }
 }
@@ -42,7 +47,6 @@ class Item {
 
     init(json: JSObject) {
         guard let aJson = json["track"] as? JSObject else { return }
-//        self.track = json["track"] as? Track
         self.track = Track(json: aJson)
         self.isLocal = json["is_local"] as? Bool
     }
