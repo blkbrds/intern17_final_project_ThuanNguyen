@@ -79,7 +79,6 @@ extension HomeViewCell: UICollectionViewDataSource, UICollectionViewDelegateFlow
         if let viewModel = viewModel {
             delegate?.cell(cell: self, needsPerform: .detail(data: viewModel.items?[indexPath.row]))
         }
-        print("=========\(indexPath.row)")
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

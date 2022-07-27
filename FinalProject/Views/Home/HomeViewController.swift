@@ -39,7 +39,7 @@ final class HomeViewController: UIViewController {
         pageView.numberOfPages = numberOfImageHeader
         pageView.currentPage = 0
         DispatchQueue.main.async {
-            self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
+            self.timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
         }
     }
 
@@ -192,9 +192,10 @@ extension HomeViewController: homeCellDelegate {
         switch action {
         case.detail(let data):
             let playViewController = PlayViewController()
-            playViewController.playModel = PlayViewControllerModel(item: data)
-            navigationController?.pushViewController(playViewController, animated: true)
+            guard let item = data else { return }
+            playViewController.playModel.getDataFromHome(items: viewModel.items)
+            playViewController.playModel = PlayViewModel(item: item)
+            self.navigationController?.pushViewController(playViewController, animated: true)
         }
     }
-
 }
