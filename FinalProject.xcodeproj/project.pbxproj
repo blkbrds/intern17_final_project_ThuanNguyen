@@ -29,7 +29,7 @@
 		BF892A7B286D42F2004702CE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF892A73286D42F2004702CE /* ProfileViewController.swift */; };
 		BF892A7F286D5469004702CE /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF892A7D286D5469004702CE /* PlayViewController.swift */; };
 		BF892A80286D5469004702CE /* PlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF892A7E286D5469004702CE /* PlayViewController.xib */; };
-		BF892A82286D6060004702CE /* PlayViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF892A81286D6060004702CE /* PlayViewControllerModel.swift */; };
+		BF892A82286D6060004702CE /* PlayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF892A81286D6060004702CE /* PlayViewModel.swift */; };
 		BF9D53DE2876F47F00256474 /* CustomHomeViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9D53CD2876F47E00256474 /* CustomHomeViewCellModel.swift */; };
 		BF9D53DF2876F47F00256474 /* CustomHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF9D53CE2876F47E00256474 /* CustomHeaderView.xib */; };
 		BF9D53E02876F47F00256474 /* CustomHomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF9D53CF2876F47E00256474 /* CustomHomeViewCell.xib */; };
@@ -73,7 +73,7 @@
 		BF892A73286D42F2004702CE /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BF892A7D286D5469004702CE /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		BF892A7E286D5469004702CE /* PlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayViewController.xib; sourceTree = "<group>"; };
-		BF892A81286D6060004702CE /* PlayViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewControllerModel.swift; sourceTree = "<group>"; };
+		BF892A81286D6060004702CE /* PlayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewModel.swift; sourceTree = "<group>"; };
 		BF9D53CD2876F47E00256474 /* CustomHomeViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomHomeViewCellModel.swift; sourceTree = "<group>"; };
 		BF9D53CE2876F47E00256474 /* CustomHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomHeaderView.xib; sourceTree = "<group>"; };
 		BF9D53CF2876F47E00256474 /* CustomHomeViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomHomeViewCell.xib; sourceTree = "<group>"; };
@@ -294,7 +294,7 @@
 			children = (
 				BF892A7D286D5469004702CE /* PlayViewController.swift */,
 				BF892A7E286D5469004702CE /* PlayViewController.xib */,
-				BF892A81286D6060004702CE /* PlayViewControllerModel.swift */,
+				BF892A81286D6060004702CE /* PlayViewModel.swift */,
 			);
 			path = PlayMusic;
 			sourceTree = "<group>";
@@ -499,7 +499,7 @@
 				BF27E0B92859D9DF006F5608 /* BaseTabBarController.swift in Sources */,
 				38DD5059285086FB0048328E /* ApiManagerPath.swift in Sources */,
 				BF9D53E12876F47F00256474 /* CustomHomeViewCell.swift in Sources */,
-				BF892A82286D6060004702CE /* PlayViewControllerModel.swift in Sources */,
+				BF892A82286D6060004702CE /* PlayViewModel.swift in Sources */,
 				38DD504E2850835F0048328E /* PhotoManager.swift in Sources */,
 				38DD5032285081F20048328E /* AppDelegate.swift in Sources */,
 				38DD5057285086A50048328E /* ApiManager.swift in Sources */,
@@ -653,9 +653,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				EXCLUDED_ARCHS = arm64;
+				DEVELOPMENT_TEAM = BDQ25UUXSC;
+				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FinalProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -667,8 +669,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.an.nguyen.FinalProject;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.an.nguyen.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = an.nguyen_provisioning;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -681,9 +684,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				EXCLUDED_ARCHS = arm64;
+				DEVELOPMENT_TEAM = BDQ25UUXSC;
+				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FinalProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -695,8 +700,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.an.nguyen.FinalProject;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.an.nguyen.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = an.nguyen_provisioning;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

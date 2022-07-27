@@ -7,12 +7,17 @@
 
 import Foundation
 import UIKit
-class PlayViewControllerModel {
+class PlayViewModel {
 
     // MARK: - properties
     var item: Item?
+    var itemsFromHome: [Item] = []
 
-    init(item: Item? = Item()) {
+    init(item: Item = Item()) {
         self.item = item
+    }
+
+    func getDataFromHome(items: [Item]) {
+        itemsFromHome = items
     }
 }

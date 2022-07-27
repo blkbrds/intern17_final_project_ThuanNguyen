@@ -12,7 +12,7 @@ final class HomeViewModel {
 
     // MARK: - properties
     var imageList: [String] = []
-    private var items: [Item] = []
+    var items: [Item] = []
     private var headerImageList: [String] = []
     private var randomNumberArray: [Int] = []
     private var itemList: [String] = []
