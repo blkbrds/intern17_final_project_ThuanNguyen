@@ -78,6 +78,9 @@
                                     <rect key="frame" x="105" y="28" width="67" height="31"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="ic-back"/>
+                                    <connections>
+                                        <action selector="handlePreviousTouchUpInSide:" destination="-1" eventType="touchUpInside" id="9aF-CL-hTe"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOx-dW-HAu">
                                     <rect key="frame" x="28" y="28" width="67" height="31"/>
@@ -91,6 +94,9 @@
                                     <rect key="frame" x="242" y="28" width="67" height="31"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="ic-next"/>
+                                    <connections>
+                                        <action selector="handNextTouchUpInside:" destination="-1" eventType="touchUpInside" id="gGX-Tf-Vn1"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cb4-Yy-NF6">
                                     <rect key="frame" x="319" y="28" width="67" height="31"/>
@@ -142,7 +148,7 @@
                                         <constraint firstAttribute="width" constant="210" id="XNE-hl-PHe"/>
                                     </constraints>
                                     <connections>
-                                        <action selector="handleTimeSliderTouchUpInside:" destination="-1" eventType="valueChanged" id="ie4-Tn-C1v"/>
+                                        <action selector="handleTimeSliderTouchUpInside:" destination="-1" eventType="touchUpInside" id="qqM-7e-ngz"/>
                                     </connections>
                                 </slider>
                             </subviews>
@@ -195,7 +201,7 @@
         <image name="ic-back" width="18" height="18"/>
         <image name="ic-next" width="18" height="18"/>
         <image name="ic-pause" width="48" height="48"/>
-        <image name="ic-repeat" width="18" height="20"/>
+        <image name="ic-repeat" width="30" height="30"/>
         <image name="ic-shuffle" width="16" height="16"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
